@@ -1,16 +1,14 @@
-import { useState } from 'react'
+import { useSelector } from 'react-redux'
+// import Counter from './features/Counter'
+import Todo from './features/Todo'
 
 function App () {
-    const [showClock, setShowClock] = useState(true);
-
-    function onShowClockClick () {
-        setShowClock(!showClock);
-    }
+    const counts = useSelector(state => state.counter.counts);
 
     return (
         <>
-            <button onClick={onShowClockClick}>Show / Hide Clock</button>
-
+            <Todo />
+            {/*<Counter />*/}
         </>
     )
 }
